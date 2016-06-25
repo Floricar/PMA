@@ -1,0 +1,23 @@
+importador de excel
+
+pagina web que permite cargar un archivo excell
+lee el excell y lo carga a una base sql server
+
+analizador
+
+1 buscar articulo
+2 asociar categorias al excell
+3 buscar quien lo vende indicando precio
+4 buscar cuantas preguntas tiene el articulo
+5 generar reporte que presenta
+  marcas
+  precios
+  cantidad de preguntas
+  competidores
+  margen de ganancia
+  
+  
+query de articulos
+esta el dato de cuantas vendio ?
+esta el dato de cuantas preguntas ?
+esta por vendedor ?
