@@ -21,3 +21,20 @@ query de articulos
 esta el dato de cuantas vendio ?
 esta el dato de cuantas preguntas ?
 esta por vendedor ?
+
+
+info
+
+como obtener preguntas:
+https://api.mercadolibre.com/questions/search?item_id=MLA619792751&offset=1
+
+listar un producto
+https://api.mercadolibre.com/sites/MLU/search?q=cartucho%20tinta%2090210
+
+obtener categorias:
+
+
+
+como obtener producto:
+
+power bi embeeded
