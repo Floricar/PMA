@@ -93,6 +93,18 @@
   };
   */
 
+  var getProductListingUpdateCall = function(products, product, price) {
+    return function(listing) {
+      products.push({product: product, price: price, listing: listing});
+    };
+  };
+
+  var getProductListingCall = function(product) {
+    return function() {
+      return PAM.getProductListing(product);
+    };
+  };
+
   var handleFile = function handleFile(e) {
     showSpinner();
     var files = e.target.files;
@@ -105,7 +117,34 @@
 
         var workbook = XLSX.read(data, {type: 'binary'});
 
-        alert();
+        var workSheet = workbook.Sheets["Sheet1"];
+
+        var p = PAM.Promises.resolvedPromise();
+        var products = [];
+
+        for(var k = 2; true; k++) {
+
+          if(workSheet['A'+k] === undefined) {
+            break;
+          }
+          var product = workSheet['A'+k].v;
+          var price = workSheet['B'+k].v;
+
+          p = p
+            .then(getProductListingCall(product))
+            .then(getProductListingUpdateCall(products, product, price));
+
+          console.log(product, price);
+
+        }
+
+        p.then(() => PAM.getAllProductsDetail(products))
+         .then(() => PAM.getAllProductsQuestions(products))
+         .then(function() {
+           for(var i = 0, count = products.length; i < count; i++) {
+              console.log(products[i]);
+           }
+         });
 
         hideSpinner();
 
