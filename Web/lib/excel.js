@@ -107,6 +107,7 @@
 
   var handleFile = function handleFile(e) {
     showSpinner();
+    PAM.showProgress();
     var files = e.target.files;
     var i,f;
     for (i = 0, f = files[i]; i != files.length; ++i) {
@@ -141,10 +142,16 @@
         p.then(() => PAM.getAllProductsDetail(products))
          .then(() => PAM.getAllProductsQuestions(products))
          .then(function() {
-           for(var i = 0, count = products.length; i < count; i++) {
-              console.log(products[i]);
-           }
-         });
+             for(var i = 0, count = products.length; i < count; i++) {
+                console.log(products[i]);
+             }
+           })
+          .then(function() {
+
+            localStorage.products = JSON.stringify(products);
+
+            window.location.href = "tables.html"
+          });
 
         hideSpinner();
 

@@ -4,7 +4,7 @@
   var readProductData = function(data) {
     var listing = [];
     var results = data.results;
-    for(var i = 0, count = results.length; i < count; i++) {
+    for(var i = 0, count = (results.length < 10 ? results.length : 10); i < count; i++) {
       listing.push({
         id: results[i].id,
         listing_type_id: results[i].listing_type_id,

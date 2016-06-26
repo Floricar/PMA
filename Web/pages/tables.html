@@ -110,124 +110,22 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table" id="dataTables-example">
                                     <thead>
                                         <tr>
                                             <th>Nombre del Producto</th>
-                                            <th>Categoria</th>
-                                            <th>Ubicacion</th>
-                                            <th>Precio (pesos)</th>
-                                            <th>Precio recomendado</th>
+                                            <th>Precio</th>
+                                            <th>Destaque</th>
+                                            <th>Envio gratuito</th>
+                                            <th>Vendidos</th>
+                                            <th>Preguntas</th>
+                                            <th>Tienda Oficial</th>
+                                            <th>Calificaciones</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr class="odd gradeX">
-                                            <td>Aspiradora</td>
-                                            <td>Electrodomestico</td>
-                                            <td>Capital Federal</td>
-                                            <td class="center">350</td>
-                                            <td class="center">275</td>
-                                        </tr>
-                                        <tr class="even gradeC">
-                                            <td>Iphone 5</td>
-                                            <td>Smartphones</td>
-                                            <td>San Juan</td>
-                                            <td class="center">5800</td>
-                                            <td class="center">5500</td>
-                                        </tr>
-                                        <tr class="odd gradeA">
-                                            <td>MacBook Pro Retina 15</td>
-                                            <td>Notebook</td>
-                                            <td>Posadas</td>
-                                            <td class="center">55000</td>
-                                            <td class="center">47000</td>
-                                        </tr>
-                                        <tr class="even gradeA">
-                                            <td>Zapatillas Running Adidas Pulse</td>
-                                            <td>Zapatillas</td>
-                                            <td>Rosario</td>
-                                            <td class="center">1800</td>
-                                            <td class="center">2200</td>
-                                        </tr>
-                                        <tr class="odd gradeA">
-                                            <td>Smart TV 42'</td>
-                                            <td>Smart TV</td>
-                                            <td>Mendoza</td>
-                                            <td class="center">15000</td>
-                                            <td class="center">13750</td>
-                                        </tr>
-                                        <tr class="even gradeA">
-                                            <td>Heladera Smart LG</td>
-                                            <td>Heladeras</td>
-                                            <td>La Rioja</td>
-                                            <td class="center">28000</td>
-                                            <td class="center">31000</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Play Station 4</td>
-                                            <td>Consolas de Video Juegos</td>
-                                            <td>Santa Rosa</td>
-                                            <td class="center">14000</td>
-                                            <td class="center">14000</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Juego de Tazas de Porcelana</td>
-                                            <td>Platos y mas</td>
-                                            <td>Concordia</td>
-                                            <td class="center">1800</td>
-                                            <td class="center">2000</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Minicomponente Philips</td>
-                                            <td>Minicomponentes</td>
-                                            <td>Formosa</td>
-                                            <td class="center">4800</td>
-                                            <td class="center">3700</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Carpeta Universitaria A4</td>
-                                            <td>Oficina</td>
-                                            <td>Rio Cuarto</td>
-                                            <td class="center">24</td>
-                                            <td class="center">21</td>
-                                        </tr>
-                                        
-                                        <tr class="gradeA">
-                                            <td>Mouse Usb Genius</td>
-                                            <td>Computacion</td>
-                                            <td>Parana</td>
-                                            <td class="center">300</td>
-                                            <td class="center">270</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Router Wifi TP-LINK</td>
-                                            <td>Routers</td>
-                                            <td>Capital Federal</td>
-                                            <td class="center">900</td>
-                                            <td class="center">875</td>
-                                        </tr>
-                                        
-                                        <tr class="gradeA">
-                                            <td>Monitor LED 24'</td>
-                                            <td>Monitores</td>
-                                            <td>Tucuman</td>
-                                            <td class="center">3700</td>
-                                            <td class="center">3500</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Cafetera Nesspreso</td>
-                                            <td>Cafeteras</td>
-                                            <td>Venado Tuerto</td>
-                                            <td class="center">2700</td>
-                                            <td class="center">2500</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Pizarron Verde</td>
-                                            <td>Oficina</td>
-                                            <td>Corrientes</td>
-                                            <td class="center">1300</td>
-                                            <td class="center">1000</td>
-                                        </tr>
+                                    <tbody id="products-body">
+
                                         
                                     </tbody>
                                 </table>
@@ -563,9 +461,18 @@
         $('#dataTables-example').DataTable({
                 responsive: true
         });
+
+
+
     });
     </script>
 
 </body>
+
+
+    <script type="text/javascript" src="../lib/PAM.js"></script>
+    <script type="text/javascript" src="../lib/accounting.js"></script>
+    <script type="text/javascript" src="../lib/tables.js"></script>
+
 
 </html>
