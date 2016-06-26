@@ -15,8 +15,8 @@
 
   for(var i = 0, count = products.length; i < count; i++) {
     var tr = $("<tr class='warning'></tr>");
-    addTd(tr, products[i].product);
-    addTd(tr, PAM.accounting.formatNumber(products[i].price,2), 'text-right');
+    addTd(tr, '<b>' + products[i].product + '</b>', null, true);
+    addTd(tr, '<b>' + PAM.accounting.formatNumber(products[i].price,2) + '</b>', 'text-right', true);
     tr.append($("<td colspan='6'></td>"))
     productsTable.append(tr);
 
