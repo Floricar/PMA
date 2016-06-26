@@ -134,6 +134,17 @@
 
       span.innerHTML = ['<span>', title, '</span>'].join('');
 
+      var arraybuffer = imgSrc;
+
+      /* convert data to binary string */
+      var data = new Uint8Array(arraybuffer);
+      var arr = new Array();
+      for(var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+      var bstr = arr.join("");
+
+      /* Call XLSX */
+      var workbook = XLSX.read(bstr, {type:"binary"});
+
       var image = span.children[0];
 
       // bind an event listener on the load to call the `resolve` function
@@ -252,13 +263,33 @@
   //
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+  var handleDrop = function handleDrop(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    var files = e.dataTransfer.files;
+    var i,f;
+    for (i = 0, f = files[i]; i != files.length; ++i) {
+      var reader = new FileReader();
+      var name = f.name;
+      reader.onload = function(e) {
+        var data = e.target.result;
+
+        /* if binary string, read with type 'binary' */
+        var workbook = XLSX.read(data, {type: 'binary'});
+
+        /* DO SOMETHING WITH workbook HERE */
+      };
+      reader.readAsBinaryString(f);
+    }
+  }
+
   if(checkApis()) {
     window.document.addEventListener("DOMContentLoaded", function(event) {
 
       // setup the dnd listeners
       //
       var dropZone = window.document.getElementById('drop_zone');
-      dropZone.addEventListener('dragover', handleDragOver, false);
+      dropZone.addEventListener('dragover', handleDrop, false);
       dropZone.addEventListener('drop', handleFileSelect, false);
     });
   }

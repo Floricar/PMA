@@ -3,8 +3,6 @@
   <head>
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
    <link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
-    <script lang="javascript" src="http://cdnjs.com/libraries/xlsx"></script>
-    <script type="text/javascript" src="../css/excel.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,7 +65,7 @@
           /* spiner */
 
           .container {
-              
+
               border-radius: 25px;
               opacity: 0.8;
               text-align: center;
@@ -139,14 +137,15 @@
   <body>
 
   <div class="container"> <!--There's the container that centers it-->
-     
+
       <div id="spinner" class="spinner-frame centered"> <!--The background-->
           <div class="spinner-cover"></div> <!--The foreground-->
           <div class="spinner-bar"></div> <!--and the spinny thing-->
       </div>
       <div class="main-container">
           <h1>Product Market Analytics</h1>
-          <div id="drop_zone"><b>Arrastre el archivo aqui</b></div>
+          <!--<div id="drop_zone"><b>Arrastre el archivo aqui</b></div> -->
+          <input id="idrop_zone" type="file"/>
       </div>
       <div class="centered">
           <output id="list"></output>
@@ -154,11 +153,15 @@
       <div class="centered">
           <output id="split-image"></output>
       </div>
- 
+
 
     </div>
   </body>
   <footer>
       <p>Powered By Mercado Libre</p>
   </footer>
+
+  <script type="text/javascript" src="../lib/excel.js"></script>
+  <script lang="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.core.min.js"></script>
+
 </html>
