@@ -14,9 +14,16 @@ background-size: cover;
 }
 
 footer{
+   font-family: 'Montserrat', sans-serif;
+    opacity: 0.4;
+    position: absolute;
+    text-align: right;
     float: right;
-    
-    
+    bottom: 1px;
+    right: 2%;
+    color: white;
+    font-size: 20px;
+    text-shadow: 2px 2px black;
 }
 
 .drop_zone{
@@ -25,13 +32,27 @@ footer{
 
 
 @media screen and (max-width:500px){
-    h1 {
-        font-size: 40px;
+    footer{
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.4;
+    position: absolute;
+    text-align: right;
+    float: right;
+    bottom: 1px;
+    right: 2%;
+    color: white;
+    font-size: 14px;
+    text-shadow: 2px 2px black;
+    
+}  
+    .drop_zone {
+        font-size: 15px;
     }
+    
     
     .container {
         padding: 4%;
-        margin-top: 5%;
+        margin-top: 2%;
         text-align: center;
     }
     
