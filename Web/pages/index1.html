@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+   <link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
+    <script lang="javascript" src="http://cdnjs.com/libraries/xlsx"></script>
+    <script type="text/javascript" src="../css/excel.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>PMA</title>
+    <link rel="stylesheet" href="../css/principal.css">
+
+      <style>
+          .main-container {
+              font-family: 'Raleway', sans-serif;
+              text-align: center;
+              padding: 30px 30px 10px 10px;
+          }
+
+          #drop_zone {
+              opacity: 1;
+              border: 5px dashed #bbb;
+              -moz-border-radius: 5px;
+              -webkit-border-radius: 5px;
+              border-radius: 5px;
+              padding: 15px;
+              text-align: center;
+              font: 20pt bold 'Vollkorn';
+              color: black;
+              max-width: 200px;
+              margin-left: auto;
+              margin-right: auto;
+          }
+
+          .centered {
+              margin-left: auto;
+              margin-right: auto;
+              text-align: center;
+          }
+
+          .centered div {
+              margin-left: auto;
+              margin-right: auto;
+              text-align: center;
+          }
+
+          .thumb {
+              height: 75px;
+              border: 1px solid #000;
+              margin: 10px 5px 0 0;
+          }
+
+          #split-image img {
+              margin: 0px 1px 0 0;
+          }
+
+          hr {
+              height: 1px;
+              color: #ed1d61;
+              background: #cecece;
+              border: 0;
+          }
+
+          /* spiner */
+
+          .container {
+              
+              border-radius: 25px;
+              opacity: 0.8;
+              text-align: center;
+              background-color: lightslategrey;
+          }
+
+          &:before {
+              content: "";
+              height: 100%;
+              display: inline-block;
+              vertical-align: middle;
+          }
+
+          .spinner-frame {
+              display: inline-block;
+              vertical-align: middle;
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              position: relative;
+              overflow: hidden;
+              border: 5px solid #fff;
+              padding: 10px;
+          }
+
+          .spinner-bar {
+              background: #29d;
+              width: 50%;
+              height: 50%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 100% 0 0 0;
+
+              -webkit-animation: spinny 2s linear infinite;
+              transform-origin: 100% 100%;
+          }
+
+          .spinner-cover {
+              background: #fff;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              position: relative;
+              z-index: 2;
+          }
+
+          @-webkit-keyframes spinny {
+              0% {
+                  transform: rotate(0deg);
+                  background: #29d;
+              }
+              50% {
+                  transform: rotate(180deg);
+                  background: #00427c;
+              }
+              100% {
+                  transform: rotate(360deg);
+                  background: #29d;
+              }
+          }
+
+          #spinner {
+              display: none;
+          }
+
+      </style>
+  </head>
+  <body>
+
+  <div class="container"> <!--There's the container that centers it-->
+     
+      <div id="spinner" class="spinner-frame centered"> <!--The background-->
+          <div class="spinner-cover"></div> <!--The foreground-->
+          <div class="spinner-bar"></div> <!--and the spinny thing-->
+      </div>
+      <div class="main-container">
+          <h1>Product Market Analytics</h1>
+          <div id="drop_zone"><b>Arrastre el archivo aqui</b></div>
+      </div>
+      <div class="centered">
+          <output id="list"></output>
+      </div>
+      <div class="centered">
+          <output id="split-image"></output>
+      </div>
+ 
+
+    </div>
+  </body>
+  <footer>
+      <p>Powered By Mercado Libre</p>
+  </footer>
+</html>
